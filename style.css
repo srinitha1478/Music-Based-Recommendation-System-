@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mood-Based Music Recommendation</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">🎵 MoodTunes</div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Section -->
+    <section class="main-section">
+        <div class="content-box">
+            <h1>Mood-Based Music Recommendation</h1>
+            <p>Upload your voice and get music that matches your mood.</p>
+
+            <form method="POST" enctype="multipart/form-data">
+                <input type="file" name="audio" accept=".wav,.mp3" required>
+                <button type="submit">Detect Mood & Recommend</button>
+            </form>
+
+            {% if emotion %}
+            <div class="output">
+                <h2>Detected Mood: <span>{{ emotion }}</span></h2>
+
+                <h3>Recommended Songs</h3>
+                <div class="songs">
+                    {% for song in songs %}
+                    <div class="song-card">{{ song }}</div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 MoodTunes | AI-Based Music Recommendation System</p>
+    </footer>
+
+    <script src="../static/js/script.js"></script>
+</body>
+</html>
