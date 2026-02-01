@@ -1,0 +1,1 @@
+RAVDESS (Ryerson Audio-Visual Database of Emotional Speech and Song) for speech emotion recognition and a custom CSV-based mood-labeled music dataset for song recommendation
